@@ -7,22 +7,49 @@
 \RequirePackage{mathrsfs} % or calrsfs
 \RequirePackage{xspace}
 
+% ----------------
+% Calligraphic font
+% ----------------
 \DeclareOption{calfont}{\def\@shm@calfont{}}
+% ----------------
+% Script font
+% ----------------
 \DeclareOption{scrfont}{\def\@shm@scrfont{}}
+% ----------------
+% Double-lined font (common)
+% ----------------
 \DeclareOption{bbfontcommon}{\def\@shm@bbfont@common{}}
+% ----------------
+% Double-lined font (all)
+% ----------------
 \DeclareOption{bbfont}{
 	\def\@shm@bbfont@common{}
 	\def\@shm@bbfont@uncommon{}
 }
+% ----------------
+% Fraktur font
+% ----------------
 \DeclareOption{frakfont}{\def\@shm@frakfont{}}
+% ----------------
+% Bold font
+% ----------------
 \DeclareOption{bffont}{\def\@shm@bffont{}}
+% ----------------
+% Sans-Serif font
+% ----------------
 \DeclareOption{sffont}{\def\@shm@sffont{}}
+% ----------------
+% Common fonts
+% ----------------
 \DeclareOption{commonfonts}{
 	\def\@shm@calfont{}
 	\def\@shm@scrfont{}
 	\def\@shm@bbfont@common{}
 	\def\@shm@frakfont{}
 }
+% ----------------
+% All fonts
+% ----------------
 \DeclareOption{allfonts}{
 	\def\@shm@calfont{}
 	\def\@shm@scrfont{}
