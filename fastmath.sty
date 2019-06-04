@@ -10,59 +10,71 @@
 % ----------------
 % Calligraphic font
 % ----------------
-\DeclareOption{calfont}{\def\@shm@calfont{}}
+\DeclareOption{calfont}{\def\@fmn@calfont{}}
 % ----------------
 % Script font
 % ----------------
-\DeclareOption{scrfont}{\def\@shm@scrfont{}}
+\DeclareOption{scrfont}{\def\@fmn@scrfont{}}
 % ----------------
 % Double-lined font (common)
 % ----------------
-\DeclareOption{bbfontcommon}{\def\@shm@bbfont@common{}}
+\DeclareOption{bbfontcommon}{\def\@fmn@bbfont@common{}}
 % ----------------
 % Double-lined font (all)
 % ----------------
 \DeclareOption{bbfont}{
-	\def\@shm@bbfont@common{}
-	\def\@shm@bbfont@uncommon{}
+	\def\@fmn@bbfont@common{}
+	\def\@fmn@bbfont@uncommon{}
 }
 % ----------------
 % Fraktur font
 % ----------------
-\DeclareOption{frakfont}{\def\@shm@frakfont{}}
+\DeclareOption{frakfont}{\def\@fmn@frakfont{}}
 % ----------------
 % Bold font
 % ----------------
-\DeclareOption{bffont}{\def\@shm@bffont{}}
+\DeclareOption{bffont}{\def\@fmn@bffont{}}
 % ----------------
 % Sans-Serif font
 % ----------------
-\DeclareOption{sffont}{\def\@shm@sffont{}}
+\DeclareOption{sffont}{\def\@fmn@sffont{}}
 % ----------------
 % Common fonts
 % ----------------
 \DeclareOption{commonfonts}{
-	\def\@shm@calfont{}
-	\def\@shm@scrfont{}
-	\def\@shm@bbfont@common{}
-	\def\@shm@frakfont{}
+	\def\@fmn@calfont{}
+	\def\@fmn@scrfont{}
+	\def\@fmn@bbfont@common{}
+	\def\@fmn@frakfont{}
 }
 % ----------------
 % All fonts
 % ----------------
 \DeclareOption{allfonts}{
-	\def\@shm@calfont{}
-	\def\@shm@scrfont{}
-	\def\@shm@bbfont@common{}
-	\def\@shm@bbfont@uncommon{}
-	\def\@shm@frakfont{}
-	\def\@shm@bffont{}
-	\def\@shm@sffont{}
+	\def\@fmn@calfont{}
+	\def\@fmn@scrfont{}
+	\def\@fmn@bbfont@common{}
+	\def\@fmn@bbfont@uncommon{}
+	\def\@fmn@frakfont{}
+	\def\@fmn@bffont{}
+	\def\@fmn@sffont{}
+}
+% ----------------
+% Everything
+% ----------------
+\DeclareOption{everything}{
+	\def\@fmn@calfont{}
+	\def\@fmn@scrfont{}
+	\def\@fmn@bbfont@common{}
+	\def\@fmn@bbfont@uncommon{}
+	\def\@fmn@frakfont{}
+	\def\@fmn@bffont{}
+	\def\@fmn@sffont{}
 }
 
 \ProcessOptions\relax
 
-\ifdefined\@shm@bbfont@common
+\ifdefined\@fmn@bbfont@common
 	\newcommand{\CC}{\ensuremath{\mathbb{C}}\xspace}
 	\newcommand{\FF}{\ensuremath{\mathbb{F}}\xspace}
 	\newcommand{\HH}{\ensuremath{\mathbb{H}}\xspace}
@@ -73,7 +85,7 @@
 	\newcommand{\RR}{\ensuremath{\mathbb{R}}\xspace}
 	\newcommand{\ZZ}{\ensuremath{\mathbb{Z}}\xspace}
 \fi
-\ifdefined\@shm@bbfont@uncommon
+\ifdefined\@fmn@bbfont@uncommon
 	\renewcommand{\AA}{\ensuremath{\mathbb{A}}\xspace}
 	\newcommand{\BB}{\ensuremath{\mathbb{B}}\xspace}
 	\newcommand{\DD}{\ensuremath{\mathbb{D}}\xspace}
@@ -92,7 +104,7 @@
 	\newcommand{\XX}{\ensuremath{\mathbb{X}}\xspace}
 	\newcommand{\YY}{\ensuremath{\mathbb{Y}}\xspace}
 \fi
-\ifdefined\@shm@calfont
+\ifdefined\@fmn@calfont
 	\newcommand{\calA}{\ensuremath{\mathcal{A}}\xspace}
 	\newcommand{\calB}{\ensuremath{\mathcal{B}}\xspace}
 	\newcommand{\calC}{\ensuremath{\mathcal{C}}\xspace}
@@ -120,7 +132,7 @@
 	\newcommand{\calY}{\ensuremath{\mathcal{Y}}\xspace}
 	\newcommand{\calZ}{\ensuremath{\mathcal{Z}}\xspace}
 \fi
-\ifdefined\@shm@scrfont
+\ifdefined\@fmn@scrfont
 	\newcommand{\scrA}{\ensuremath{\mathscr{A}}\xspace}
 	\newcommand{\scrB}{\ensuremath{\mathscr{B}}\xspace}
 	\newcommand{\scrC}{\ensuremath{\mathscr{C}}\xspace}
@@ -148,7 +160,7 @@
 	\newcommand{\scrY}{\ensuremath{\mathscr{Y}}\xspace}
 	\newcommand{\scrZ}{\ensuremath{\mathscr{Z}}\xspace}
 \fi
-\ifdefined\@shm@frakfont
+\ifdefined\@fmn@frakfont
 	\newcommand{\frakA}{\ensuremath{\mathfrak{A}}\xspace}
 	\newcommand{\frakB}{\ensuremath{\mathfrak{B}}\xspace}
 	\newcommand{\frakC}{\ensuremath{\mathfrak{C}}\xspace}
@@ -202,7 +214,7 @@
 	\newcommand{\fraky}{\ensuremath{\mathfrak{y}}\xspace}
 	\newcommand{\frakz}{\ensuremath{\mathfrak{z}}\xspace}
 \fi
-\ifdefined\@shm@bffont
+\ifdefined\@fmn@bffont
 	\newcommand{\bfA}{\ensuremath{\mathbf{A}}\xspace}
 	\newcommand{\bfB}{\ensuremath{\mathbf{B}}\xspace}
 	\newcommand{\bfC}{\ensuremath{\mathbf{C}}\xspace}
@@ -256,7 +268,7 @@
 	\newcommand{\bfy}{\ensuremath{\mathbf{y}}\xspace}
 	\newcommand{\bfz}{\ensuremath{\mathbf{z}}\xspace}
 \fi
-\ifdefined\@shm@sffont
+\ifdefined\@fmn@sffont
 	\newcommand{\sfA}{\ensuremath{\mathsf{A}}\xspace}
 	\newcommand{\sfB}{\ensuremath{\mathsf{B}}\xspace}
 	\newcommand{\sfC}{\ensuremath{\mathsf{C}}\xspace}
