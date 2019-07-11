@@ -323,4 +323,42 @@
 	\newcommand{\sfz}{\ensuremath{\mathsf{z}}\xspace}
 \fi
 
+% ----------------
+% \range
+% ----------------
+\newcommand{\@range}[3][,]{\ensuremath{%
+	\def\sep@param@range{#1}%
+	\def\end@param@range{#2}%
+	\def\indexable@param@range{#3}%
+	{\indexable@param@range{}}_{\start@param@range{}}{\sep@param@range{}}{\mid@param@range{}}{\sep@param@range{}}{\indexable@param@range{}}_{\end@param@range{}}%
+}}
+\newcommand{\@@range}[1][\ldots]{\ensuremath{%
+	\def\mid@param@range{#1}%
+	\@range%
+}}
+\newcommand{\@@@range}[1][1]{\ensuremath{%
+	\def\start@param@range{#1}%
+	\@@range%
+}}
+\newcommand{\range}{\@@@range}
+% ----------------
+% \corange
+% ----------------
+\newcommand{\@corange}[3][,]{\ensuremath{%
+	\def\sep@param@corange{#1}%
+	\def\end@param@corange{#2}%
+	\def\indexable@param@corange{#3}%
+	{\indexable@param@corange{}}^{\start@param@corange{}}{\sep@param@corange{}}{\mid@param@corange{}}{\sep@param@corange{}}{\indexable@param@corange{}}^{\end@param@corange{}}%
+}}
+\newcommand{\@@corange}[1][\ldots]{\ensuremath{%
+	\def\mid@param@corange{#1}%
+	\@corange%
+}}
+\newcommand{\@@@corange}[1][1]{\ensuremath{%
+	\def\start@param@corange{#1}%
+	\@@corange%
+}}
+\newcommand{\corange}{\@@@corange}
+
+
 \endinput

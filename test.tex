@@ -2,6 +2,8 @@
 
 \usepackage[allfonts]{fastmath}
 
+\def\sep{\vspace{0.2cm}\hrule\vspace{0.5cm}\noindent}
+
 \begin{document}
     \noindent Calligraphic fonts:
     $$
@@ -26,5 +28,13 @@
     Sans-Serif faces:
     $$
         \sfA\sfB\sfC\ldots\sfX\sfY\sfZ~\sfa\sfb\sfc\ldots\sfx\sfy\sfz
+    $$
+    \sep
+    Ranges of items:
+    $$
+        (\range{i - 1}{x}, \range[i + 1]{n}{x}) \times (\corange[1][\cdots][\otimes]{n - 1}{\xi})
+    $$
+    $$
+        (x_1, \ldots, x_{i - 1}, x_{i + 1}, \ldots, x_n) \times (\xi^1 \otimes\cdots\otimes \xi^{n - 1})
     $$
 \end{document}
