@@ -4,6 +4,10 @@
 
 \def\sep{\vspace{0.2cm}\hrule\vspace{0.5cm}\noindent}
 
+\declareform{test}{\texttt{Hello, \param{name}!}}
+\declareform{parametric}{\texttt{\param{key} is \param{value}}}
+\declareform{ranging}{\param{value}_{\param{startindex}}, \ldots, \param{value}_{\param{endindex}}}
+
 \begin{document}
     \noindent Calligraphic fonts:
     $$
@@ -32,9 +36,47 @@
     \sep
     Ranges of items:
     $$
-        (\range{i - 1}{x}, \range[i + 1]{n}{x}) \times (\corange[1][\cdots][\otimes]{n - 1}{\xi})
+        (\range{i - 1}{x}, \range[i + 1]{n}{x^\alpha}) \times (\corange[1][\cdots][\otimes]{n - 1}{\xi_\beta})
     $$
     $$
-        (x_1, \ldots, x_{i - 1}, x_{i + 1}, \ldots, x_n) \times (\xi^1 \otimes\cdots\otimes \xi^{n - 1})
+        (x^\alpha_1, \ldots, x^\alpha_{i - 1}, x^\alpha_{i + 1}, \ldots, x^\alpha_n) \times (\xi_\beta^1 \otimes\cdots\otimes \xi_\beta^{n - 1})
+    $$
+    \sep
+    Form tests:\\
+    \begin{form}{test}
+        \param{name}{world}
+    \end{form}\\
+    \begin{form}{parametric}
+        \param{key}{foo}
+        \param{value}{5}
+    \end{form}\begin{form}{parametric}
+        \param{key}{bar}
+        \param{value}{9}
+    \end{form}
+    \begin{form}{parametric}
+        \param{key}{baz}
+        \param{value}{true}
+    \end{form}\\
+    \begin{form}{test}
+        \param{name}{spaced words}
+    \end{form}\\
+    \begin{form}{test}
+        \param{name}{%
+            complex name
+            on several lines
+        }
+    \end{form}\\
+    \begin{form}{test}
+        \param{name}{%
+            newline\\
+            world
+        }
+    \end{form}
+    $$
+        \begin{form}{ranging}
+            \param{value}{\Gamma}
+            \param{startindex}{3}
+            \param{endindex}{8}
+        \end{form}
     $$
 \end{document}
